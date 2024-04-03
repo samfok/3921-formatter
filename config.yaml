@@ -1,0 +1,519 @@
+T Record:
+  Record Type:
+    Required: 1
+    Length: 1
+    Value: T
+  Payment Year:
+    Required: 1
+    Length: 4
+    Key: YEAR
+  Prior Year Data Indicator:
+    Length: 1
+    Key: PRIOR YEAR
+  Transmitter TIN:
+    Required: 1
+    Length: 9
+    Key: TRANSFEROR TIN
+  Transmitter Control Code:
+    Required: 1
+    Length: 5
+    Key: TRANSFEROR TCC
+  Blank21:
+    Length: 7
+  Test File Indicator:
+    Length: 1
+    Key: TEST
+  Foreign Entity Indicator:
+    Length: 1
+  Transmitter Name:
+    Required: 1
+    Length: 40
+    Justify: Left
+    Key: TRANSFEROR NAME
+  Transmitter Name (Continuation): # continuation not yet supported
+    Length: 40
+    Justify: Left
+  Company Name:
+    Required: 1
+    Length: 40
+    Justify: Left # assumed--was not specified in p1220
+    Key: TRANSFEROR NAME
+  Company Name (Continuation): # continuation not yet supported
+    Length: 40
+    Justify: Left # assumed--was not specified in p1220
+  Company Mailing Address:
+    Required: 1
+    Length: 40
+    Key: TRANSFEROR STREET ADDRESS
+  Company City:
+    Required: 1
+    Length: 40
+    Key: TRANSFEROR CITY
+  Company State:
+    Required: 1
+    Length: 2
+    Key: TRANSFEROR STATE
+  Company ZIP Code:
+    Required: 1
+    Length: 9
+    Key: TRANSFEROR ZIP
+  Blank281:
+    Length: 15
+  Total Number of Payees:
+    Length: 8
+    Value: 1 # One payee per file for now
+  Contact Name:
+    Required: 1
+    Length: 40
+    Key: DEVELOPER NAME
+  Contact Telephone Number \& Extension:
+    Required: 1
+    Length: 15
+    Justify: Left
+    Key: DEVELOPER PHONE
+  Contact Email Address:
+    Required: 1
+    Length: 50
+    Justify: Left
+    Key: DEVELOPER EMAIL
+  Blank409:
+    Length: 91
+  Record Sequence Number:
+    Required: 1
+    Length: 8
+    Justify: Right
+    Fill: "0"
+    Value: 1 # T is always the first record
+  Blank508:
+    Length: 10
+  Vendor Indicator:
+    Required: 1
+    Length: 1
+    Value: I
+  Vendor Name:
+    Length: 40
+  Vendor Mailing Address:
+    Length: 40
+  Vendor City:
+    Length: 40
+  Vendor State:
+    Length: 2
+  Vendor ZIP Code:
+    Length: 9
+  Vendor Contact Name:
+    Length: 40
+  Vendor Contact Telephone Number \& Extension:
+    Length: 15
+  Blank705:
+    Length: 35
+  Vendor Foreign Entity Indicator:
+    Length: 1
+  Blank741:
+    Length: 8
+  Blank749:
+    Length: 2
+    Value: " \n"
+A Record:
+  Record Type:
+    Required: 1
+    Length: 1
+    Value: A
+  Payment Year:
+    Required: 1
+    Length: 4
+    Key: YEAR
+  Combined Federal/ State Filing Program:
+    Length: 1
+  Blank7:
+    Length: 5
+  Issuer Taxpayer Identification Number (TIN):
+    Required: 1
+    Length: 9
+    Key: TRANSFEROR TIN
+  Issuer Name Control:
+    Length: 4
+    Value: FEMT
+  Last Filing Indicator:
+    Length: 1
+    Key: LAST FILING
+  Type of Return:
+    Required: 1
+    Length: 2
+    Value: N
+    Justify: Left
+  Amount Codes:
+    Required: 1
+    Length: 18
+    Justify: Left
+    Value: "34"
+  Blank46:
+    Length: 6
+  Foreign Entity Indicator:
+    Length: 1
+  First Issuer Name Line:
+    Required: 1
+    Length: 40
+    Justify: Left
+    Key: TRANSFEROR NAME
+  Second Issuer Name Line:
+    Length: 40
+    Justify: Left
+  Transfer Agent Indicator:
+    Length: 1
+    Value: 0
+  Issuer Shipping Address:
+    Required: 1
+    Length: 40
+    Justify: Left
+    Key: TRANSFEROR STREET ADDRESS
+  Issuer City:
+    Required: 1
+    Length: 40
+    Justify: Left
+    Key: TRANSFEROR CITY
+  Issuer State:
+    Required: 1
+    Length: 2
+    Key: TRANSFEROR STATE
+  Issuer ZIP Code:
+    Required: 1
+    Length: 9
+    Key: TRANSFEROR ZIP
+  Issuer Telephone Number \& Extension:
+    Length: 15
+    Justify: Left
+    Key: TRANSFEROR PHONE
+  Blank240:
+    Length: 260
+  Record Sequence Number:
+    Required: 1
+    Length: 8
+    Justify: Right
+    Fill: "0"
+    Value: 2 # Hardcoded for single A record for now
+  Blank508:
+    Length: 241
+  Blank749:
+    Length: 2
+    Value: " \n"
+B Record:
+  Record Type:
+    Required: 1
+    Length: 1
+    Value: B
+  Payment Year:
+    Required: 1
+    Length: 4
+    Key: YEAR
+  Corrected Return Indicator:
+    Length: 1
+    Key: CORRECTED
+  Name Control:
+    Required: 1
+    Length: 4
+    Justify: Left
+    Key: EMPLOYEE LAST NAME
+  Type of TIN:
+    Length: 1
+    Value: 2
+  Payee's Taxpayer Identification Number (TIN):
+    Required: 1
+    Length: 9
+    Key: EMPLOYEE TIN
+  Issuers Account Number for Payee:
+    Required: 1
+    Length: 20
+    Justify: Left
+    Key: ACCOUNT NUMBER
+  Issuers Office Code:
+    Length: 4
+  Blank45:
+    Length: 10
+  Payment Amount 1:
+    Length: 12
+    Justify: Right
+    Fill: "0"
+  Payment Amount 2:
+    Length: 12
+    Justify: Right
+    Fill: "0"
+  Payment Amount 3:
+    Required: 1
+    Payment: 1
+    Length: 12
+    Justify: Right
+    Fill: "0"
+    Key: EXERCISE PRICE
+  Payment Amount 4:
+    Required: 1
+    Payment: 1
+    Length: 12
+    Justify: Right
+    Fill: "0"
+    Key: FAIR MARKET VALUE ON EXERCISE DATE
+  Payment Amount 5:
+    Length: 12
+    Justify: Right
+    Fill: "0"
+  Payment Amount 6:
+    Length: 12
+    Justify: Right
+    Fill: "0"
+  Payment Amount 7:
+    Length: 12
+    Justify: Right
+    Fill: "0"
+  Payment Amount 8:
+    Length: 12
+    Justify: Right
+    Fill: "0"
+  Payment Amount 9:
+    Length: 12
+    Justify: Right
+    Fill: "0"
+  Payment Amount A:
+    Length: 12
+    Justify: Right
+    Fill: "0"
+  Payment Amount B:
+    Length: 12
+    Justify: Right
+    Fill: "0"
+  Payment Amount C:
+    Length: 12
+    Justify: Right
+    Fill: "0"
+  Payment Amount D:
+    Length: 12
+    Justify: Right
+    Fill: "0"
+  Payment Amount E:
+    Length: 12
+    Justify: Right
+    Fill: "0"
+  Payment Amount F:
+    Length: 12
+    Justify: Right
+    Fill: "0"
+  Payment Amount G:
+    Length: 12
+    Justify: Right
+    Fill: "0"
+  Payment Amount H:
+    Length: 12
+    Justify: Right
+    Fill: "0"
+  Payment Amount J:
+    Length: 12
+    Justify: Right
+    Fill: "0"
+  Blank271:
+    Length: 16
+  Foreign Country Indicator:
+     Length: 1
+  First Payee Name Line:
+    Required: 1
+    Length: 40
+    Justify: Left
+    Key: EMPLOYEE NAME
+  Second Payee Name Line:
+    Length: 40
+    Justify: Left
+  Payee Mailing Address:
+    Required: 1
+    Length: 40
+    Justify: Left
+    Key: EMPLOYEE STREET ADDRESS
+  Blank408:
+    Length: 40
+  Payee City:
+    Required: 1
+    Length: 40
+    Justify: Left
+    Key: EMPLOYEE CITY
+  Payee State:
+    Required: 1
+    Length: 2
+    Key: EMPLOYEE STATE
+  Payee ZIP Code:
+    Required: 1
+    Length: 9
+    Key: EMPLOYEE ZIP
+  Blank499:
+    Length: 1
+  Record Sequence Number:
+    Length: 8
+    Justify: Right
+    Fill: "0"
+    Value: 3 # Hardcoded for single B record for now
+  Blank508:
+    Length: 36
+  Blank544:
+    Length: 3
+  Date Option Granted:
+    Required: 1
+    Length: 8
+    Key: DATE OPTION GRANTED
+  Date Option Exercised:
+    Required: 1
+    Length: 8
+    Key: DATE OPTION EXERCISED
+  Number of Shares Transferred:
+    Required: 1
+    Length: 8
+    Justify: Right
+    Fill: "0"
+    Key: NUMBER OF SHARES
+  Blank571:
+    Length: 4
+  If Other Than Transferor Information:
+    Length: 40
+    Justify: Left
+  Blank615:
+    Length: 48
+  Special Data Entries:
+    Length: 60
+  Blank723:
+    Length: 26
+  Blank749:
+    Length: 2
+    Value: " \n"
+C Record:
+  Record Type:
+    Required: 1
+    Length: 1
+    Value: C
+  Number of Payees:
+    Required: 1
+    Length: 8
+    Justify: Right
+    Fill: "0"
+    Value: 1
+  Blank10:
+    Length: 6
+  Control Total 1:
+    Length: 18
+    Justify: Right
+    Fill: "0"
+  Control Total 2:
+    Length: 18
+    Justify: Right
+    Fill: "0"
+  Control Total 3:
+    Required: 1
+    Length: 18
+    Payment: 1
+    Justify: Right
+    Fill: "0"
+    Key: EXERCISE PRICE
+  Control Total 4:
+    Required: 1
+    Length: 18
+    Payment: 1
+    Justify: Right
+    Fill: "0"
+    Key: FAIR MARKET VALUE ON EXERCISE DATE
+  Control Total 5:
+    Length: 18
+    Justify: Right
+    Fill: "0"
+  Control Total 6:
+    Length: 18
+    Justify: Right
+    Fill: "0"
+  Control Total 7:
+    Length: 18
+    Justify: Right
+    Fill: "0"
+  Control Total 8:
+    Length: 18
+    Justify: Right
+    Fill: "0"
+  Control Total 9:
+    Length: 18
+    Justify: Right
+    Fill: "0"
+  Control Total A:
+    Length: 18
+    Justify: Right
+    Fill: "0"
+  Control Total B:
+    Length: 18
+    Justify: Right
+    Fill: "0"
+  Control Total C:
+    Length: 18
+    Justify: Right
+    Fill: "0"
+  Control Total D:
+    Length: 18
+    Justify: Right
+    Fill: "0"
+  Control Total E:
+    Length: 18
+    Justify: Right
+    Fill: "0"
+  Control Total F:
+    Length: 18
+    Justify: Right
+    Fill: "0"
+  Control Total G:
+    Length: 18
+    Justify: Right
+    Fill: "0"
+  Control Total H:
+    Length: 18
+    Justify: Right
+    Fill: "0"
+  Control Total J:
+    Length: 18
+    Justify: Right
+    Fill: "0"
+  Blank340:
+    Length: 160
+  Record Sequence Number:
+    Required: 1
+    Length: 8
+    Justify: Right
+    Fill: "0"
+    Value: 4 # Hardcoded for single of each record
+  Blank508:
+    Length: 241
+  Blank749:
+    Length: 2
+    Value: " \n"
+F Record:
+  Record Type:
+    Required: 1
+    Length: 1
+    Value: F
+  Number of \"A\" Records:
+    Required: 1
+    Length: 8
+    Justify: Right
+    Fill: "0"
+    Value: 1 # Hardcoded for single A record
+  Zero:
+    Length: 21
+    Fill: "0"
+  Blank31:
+    Length: 19
+  Total Number of Payees:
+    Required: 1
+    Length: 8
+    Justify: Right
+    Fill: "0"
+    Value: 1 # Hardcoded for single payee
+  Blank58:
+    Length: 442
+  Record Sequence Number:
+    Required: 1
+    Length: 8
+    Justify: Right
+    Fill: "0"
+    Value: 5 # Hardcoded for single of each record
+  Blank508:
+    Length: 241
+  Blank749:
+    Length: 2
+    Value: " \n"
